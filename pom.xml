@@ -44,7 +44,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 引入Mybatis-plus -->
+        <!-- 引入mysql驱动 -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
