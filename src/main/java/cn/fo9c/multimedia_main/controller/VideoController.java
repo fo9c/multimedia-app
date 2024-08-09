@@ -2,7 +2,6 @@ package cn.fo9c.multimedia_main.controller;
 
 import cn.fo9c.multimedia_main.domain.Navigation;
 import cn.fo9c.multimedia_main.domain.VideoPageLists;
-import cn.fo9c.multimedia_main.domain.Videopage;
 import cn.fo9c.multimedia_main.mapper.NavigationMapper;
 import cn.fo9c.multimedia_main.mapper.VideoMapper;
 import cn.fo9c.multimedia_main.mapper.VideopageMapper;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/hrlweibo/manage/hrlvedio")
@@ -43,8 +41,8 @@ public class VideoController {
      * @return 导航栏列表
      */
     @RequestMapping("/list.do")
-    public ResponseResult list() {
-        List< Navigation> list = navigationMapper.selectList(null);
+    public ResponseResult<List<Navigation>> list() {
+        List<Navigation> list = navigationMapper.selectList(null);
         return ResponseResult.success(list);
     }
 
