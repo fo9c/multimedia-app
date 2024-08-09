@@ -22,8 +22,8 @@ public class VideoPageLists {
     private int nextPage;
     private int lastPage;
 
-    private boolean sdisFadirstPage;
-    private boolean isLastPage;
+    private boolean isfirstPage;
+    private boolean islastPage;
 
     private boolean hasPreviousPage;
     private boolean hasNextPage;
@@ -47,8 +47,8 @@ public class VideoPageLists {
         this.nextPage = videopage.getNext_page();
         this.lastPage = videopage.getLast_page();
 
-        this.sdisFadirstPage = videopage.is_first_page();
-        this.isLastPage = videopage.is_last_page();
+        this.isfirstPage = videopage.is_first_page();
+        this.islastPage = videopage.is_last_page();
 
         this.hasPreviousPage = videopage.isHas_previous_page();
         this.hasNextPage = videopage.isHas_next_page();

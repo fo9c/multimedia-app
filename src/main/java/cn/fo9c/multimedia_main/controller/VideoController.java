@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/hrlweibo/manage/hrlvedio")
-public class HrlvedioController {
+public class VideoController {
 
     @Resource
     private VideoMapper videoMapper;
@@ -28,22 +28,23 @@ public class HrlvedioController {
      */
     @RequestMapping("/recommendlist.do")
     public ResponseResult hrlweibo() {
-
-        System.out.println("recommendlist");
-        Videopage videoPage = videoPageMapper.selectById(1);
-        System.out.println(videoPage);
-        System.out.println("-----------------");
-
-        List<Video> videos = videoMapper.selectList(null);
-        System.out.println(videos);
-        System.out.println("-----------------");
-
-        VideoPageLists videoPageLists = new VideoPageLists(videos, videoPage);
+        VideoPageLists videoPageLists = new VideoPageLists(videoMapper.selectList(null), videoPageMapper.selectById(1));
         System.out.println(videoPageLists);
 
         return ResponseResult.success(videoPageLists);
     }
 
+    /**
+     * 导航栏列表
+     * @return 视频列表
+     */
+    @RequestMapping("/list.do")
+    public ResponseResult list() {
+        List<Videopage> videopages = videoPageMapper.selectList(null);
+        System.out.println(videopages);
+
+        return ResponseResult.success(videopages);
+    }
 
 
 
