@@ -3,5 +3,5 @@
 </H1>
 
 <p align="center">
-  使用 <b>IDEA</b> 编写 在<br>
+  使用 <b>IDEA</b> 编写<br>
 </p>
