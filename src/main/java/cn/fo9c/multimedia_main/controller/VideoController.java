@@ -1,8 +1,9 @@
 package cn.fo9c.multimedia_main.controller;
 
-import cn.fo9c.multimedia_main.domain.Video;
+import cn.fo9c.multimedia_main.domain.Navigation;
 import cn.fo9c.multimedia_main.domain.VideoPageLists;
 import cn.fo9c.multimedia_main.domain.Videopage;
+import cn.fo9c.multimedia_main.mapper.NavigationMapper;
 import cn.fo9c.multimedia_main.mapper.VideoMapper;
 import cn.fo9c.multimedia_main.mapper.VideopageMapper;
 import cn.fo9c.multimedia_main.utils.ResponseResult;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/hrlweibo/manage/hrlvedio")
@@ -22,28 +24,28 @@ public class VideoController {
     @Resource
     private VideopageMapper videoPageMapper;
 
+    @Resource
+    private NavigationMapper navigationMapper;
+
     /**
      * 视频推荐列表
      * @return 推荐列表
      */
     @RequestMapping("/recommendlist.do")
-    public ResponseResult hrlweibo() {
+    public ResponseResult<VideoPageLists> hrlweibo() {
         VideoPageLists videoPageLists = new VideoPageLists(videoMapper.selectList(null), videoPageMapper.selectById(1));
         System.out.println(videoPageLists);
-
         return ResponseResult.success(videoPageLists);
     }
 
     /**
      * 导航栏列表
-     * @return 视频列表
+     * @return 导航栏列表
      */
     @RequestMapping("/list.do")
     public ResponseResult list() {
-        List<Videopage> videopages = videoPageMapper.selectList(null);
-        System.out.println(videopages);
-
-        return ResponseResult.success(videopages);
+        List< Navigation> list = navigationMapper.selectList(null);
+        return ResponseResult.success(list);
     }
 
 
