@@ -1,7 +1,6 @@
 package cn.fo9c.multimedia_main.controller;
 
 import cn.fo9c.multimedia_main.domain.Navigation;
-import cn.fo9c.multimedia_main.domain.Video;
 import cn.fo9c.multimedia_main.domain.VideoPageLists;
 import cn.fo9c.multimedia_main.mapper.NavigationMapper;
 import cn.fo9c.multimedia_main.mapper.VideoMapper;
