@@ -10,14 +10,15 @@ spring:
   # 配置数据库
   datasource:
     # 数据库连接池
-    url: jdbc:mysql://104.208.87.240:3306/multimedia?serverTimezone=UTC
-
+#    url: jdbc:mysql://104.208.87.240:3306/multimedia?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3307/multimedia?serverTimezone=UTC
     # 数据库驱动
     driver-class-name: com.mysql.cj.jdbc.Driver
     # driver-class-name: com.p6spy.engine.spy.P6SpyDriver
 
     # 数据库用户名与密码
-    username: 'fo9c'
+#    username: 'fo9c'
+    username: 'root'
     password: '123456'
 
 # MyBatis Plus配置

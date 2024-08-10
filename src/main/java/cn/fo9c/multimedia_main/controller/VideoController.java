@@ -1,6 +1,7 @@
 package cn.fo9c.multimedia_main.controller;
 
 import cn.fo9c.multimedia_main.domain.Navigation;
+import cn.fo9c.multimedia_main.domain.Video;
 import cn.fo9c.multimedia_main.domain.VideoPageLists;
 import cn.fo9c.multimedia_main.mapper.NavigationMapper;
 import cn.fo9c.multimedia_main.mapper.VideoMapper;
@@ -46,7 +47,25 @@ public class VideoController {
         return ResponseResult.success(list);
     }
 
+    /**
+     * 热门视频列表
+     * @return 热门视频列表
+     */
+    @RequestMapping("/hotlist.do")
+    public ResponseResult<VideoPageLists> hotlist() {
+        VideoPageLists videoPageLists = new VideoPageLists(videoMapper.selectList(null), videoPageMapper.selectById(1));
+        return ResponseResult.success(videoPageLists);
+    }
 
-
-
+    /**
+     * 分页查询视频列表
+     * @param page 页码
+     *  @param size 每页数量
+     *  @return 视频列表
+     */
+    @RequestMapping("/pagelist.do")
+    public ResponseResult<VideoPageLists> pagelist(int page, int size) {
+        VideoPageLists videoPageLists = new VideoPageLists(videoMapper.selectList(null), videoPageMapper.selectById(1));
+        return ResponseResult.success(videoPageLists);
+    }
 }
