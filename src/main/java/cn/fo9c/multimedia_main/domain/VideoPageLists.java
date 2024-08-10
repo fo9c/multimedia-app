@@ -47,13 +47,13 @@ public class VideoPageLists {
         this.nextPage = videopage.getNextPage();
         this.lastPage = videopage.getLastPage();
 
-        this.isfirstPage = videopage.is_first_page();
-        this.islastPage = videopage.is_last_page();
+        this.isfirstPage = videopage.isIsfirstpage();
+        this.islastPage = videopage.isIslastpage();
 
-        this.hasPreviousPage = videopage.isHasPreviousPage();
-        this.hasNextPage = videopage.isHas_next_page();
+        this.hasPreviousPage = videopage.isHaspreviouspage();
+        this.hasNextPage = videopage.isHasnextpage();
         this.navigatePages = videopage.getNavigatePages();
-        this.navigatepageNums = videopage.getNavigatepage_nums();
+        this.navigatepageNums = videopage.getNavigatepageNums();
     }
 
 }

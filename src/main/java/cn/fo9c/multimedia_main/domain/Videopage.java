@@ -29,10 +29,10 @@ public class Videopage {
 
     private int nextPage;
     private int lastPage;
-    private boolean is_first_page;
-    private boolean is_last_page;
-    private boolean hasPreviousPage;
-    private boolean has_next_page;
+    private boolean isfirstpage;
+    private boolean islastpage;
+    private boolean haspreviouspage;
+    private boolean hasnextpage;
     private int navigatePages;
-    private String navigatepage_nums;
+    private String navigatepageNums;
 }
