@@ -8,6 +8,7 @@ import cn.fo9c.multimedia_main.mapper.VideopageMapper;
 import cn.fo9c.multimedia_main.utils.ResponseResult;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -30,8 +31,8 @@ public class VideoController {
      * @return 推荐列表
      */
     @RequestMapping("/recommendlist.do")
-    public ResponseResult<VideoPageLists> hrlweibo() {
-        VideoPageLists videoPageLists = new VideoPageLists(videoMapper.selectList(null), videoPageMapper.selectById(1));
+        public ResponseResult<VideoPageLists> hrlweibo(@RequestParam(value = "page", defaultValue = "1") Integer page ) {
+        VideoPageLists videoPageLists = new VideoPageLists(videoMapper.selectList(null), videoPageMapper.selectById(page));
         System.out.println(videoPageLists);
         return ResponseResult.success(videoPageLists);
     }

@@ -16,14 +16,14 @@ public class Video {
     private Long id;
 
     private String coverimg;
-    private int videotime;
+    private String videotime;
     private int playnum;
     private Long userid;
     private String tag;
     private String recommengstr;
     private int type;
     private String introduce;
-    private int createtime;
+    private String createtime;
     private String username;
     private String userheadurl;
     private boolean userisvertify;
