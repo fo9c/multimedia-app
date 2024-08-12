@@ -7,6 +7,7 @@ import cn.fo9c.multimedia_main.mapper.VideoMapper;
 import cn.fo9c.multimedia_main.mapper.VideopageMapper;
 import cn.fo9c.multimedia_main.utils.ResponseResult;
 import jakarta.annotation.Resource;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,7 +42,7 @@ public class VideoController {
      * 导航栏列表
      * @return 导航栏列表
      */
-    @RequestMapping("/list.do")
+    @PostMapping("/list.do")
     public ResponseResult<List<Navigation>> list() {
         List<Navigation> list = navigationMapper.selectList(null);
         return ResponseResult.success(list);
@@ -49,9 +50,10 @@ public class VideoController {
 
     /**
      * 热门视频列表
+     *
      * @return 热门视频列表
      */
-    @RequestMapping("/hotlist.do")
+    @PostMapping("/hotlist.do")
     public ResponseResult<VideoPageLists> hotlist() {
         VideoPageLists videoPageLists = new VideoPageLists(videoMapper.selectList(null), videoPageMapper.selectById(1));
         return ResponseResult.success(videoPageLists);
@@ -63,7 +65,7 @@ public class VideoController {
      *  @param size 每页数量
      *  @return 视频列表
      */
-    @RequestMapping("/pagelist.do")
+    @PostMapping("/pagelist.do")
     public ResponseResult<VideoPageLists> pagelist(int page, int size) {
         VideoPageLists videoPageLists = new VideoPageLists(videoMapper.selectList(null), videoPageMapper.selectById(1));
         return ResponseResult.success(videoPageLists);
